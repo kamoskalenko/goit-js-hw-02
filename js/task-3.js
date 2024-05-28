@@ -1,14 +1,7 @@
 //"use script";
 function checkForSpam(message) {
-    if (message.toLowerCase().includes("spam")) {
-        return true;
-    }
-    else if (message.toLowerCase().includes("sale")) {
-        return true;
-    }
-    else {
-        return false;
-    }
+    const normalizedMessage = message.toLowerCase()
+    return normalizedMessage.includes('spam') ||  normalizedMessage.includes('sale')
 }
 
 console.log(checkForSpam("Latest technology news")); // false
@@ -19,7 +12,15 @@ console.log(checkForSpam("Trust me, this is not a spam message")); // true
 console.log(checkForSpam("Get rid of sPaM emails. Our book in on sale!")); // true
 console.log(checkForSpam("[SPAM] How to earn fast money?")); // true
 
+
 // function checkForSpam(message) {
-//     const normalizedMessage = message.toLowerCase()
-//     return normalizedMessage.includes('spam') ||  normalizedMessage.includes('sale')
+//     if (message.toLowerCase().includes("spam")) {
+//         return true;
+//     }
+//     else if (message.toLowerCase().includes("sale")) {
+//         return true;
+//     }
+//     else {
+//         return false;
+//     }
 // }
